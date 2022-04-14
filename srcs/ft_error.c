@@ -43,8 +43,8 @@ void	clean_vars(t_vars *vars)
 			mlx_destroy_image(vars->mlx, vars->img);
 		if (vars->win)
 			mlx_destroy_window(vars->mlx, vars->win);
-		#ifndef __APPLE__ //tomorrow delete this part
-		mlx_destroy_display(vars->mlx);
+		#ifndef __APPLE__
+			mlx_destroy_display(vars->mlx);
 		#endif
 		free(vars->mlx);
 	}

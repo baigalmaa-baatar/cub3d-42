@@ -34,7 +34,7 @@ int	y_offset(float pdy)
 
 void	look_left(t_vars *v)
 {
-	v->pa += 3;
+	v->pa += 6;
 	v->pa = fix_ang(v->pa);
 	v->pdx = cos(deg_to_rad(v->pa));
 	v->pdy = -sin(deg_to_rad(v->pa));
@@ -42,7 +42,7 @@ void	look_left(t_vars *v)
 
 void	look_right(t_vars *v)
 {
-	v->pa -= 3;
+	v->pa -= 6;
 	v->pa = fix_ang(v->pa);
 	v->pdx = cos(deg_to_rad(v->pa));
 	v->pdy = -sin(deg_to_rad(v->pa));

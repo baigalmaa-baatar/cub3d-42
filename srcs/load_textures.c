@@ -12,6 +12,17 @@
 
 #include "../includes/cub3d.h"
 
+void	check_texture_size(t_vars *v)
+{
+	if (v->n.w > 1000 || v->n.h > 1000 || v->e.w > 1000 || v->e.h > 1000
+		|| v->s.w > 1000 || v->s.h > 1000 || v->w.w > 1000 || v->w.h > 1000)
+		ft_error(v, "Error\nTexture size too big", 0);
+	v->ray.wall[0].size = v->n.w;
+	v->ray.wall[1].size = v->s.w;
+	v->ray.wall[2].size = v->w.w;
+	v->ray.wall[3].size = v->e.w;
+}
+
 void	load_textures(t_vars *v)
 {
 	v->n.img = mlx_xpm_file_to_image(v->mlx, v->north, &v->n.w, &v->n.h);
@@ -30,8 +41,5 @@ void	load_textures(t_vars *v)
 	if (!v->w.img)
 		ft_error(v, OPEN_W, 1);
 	v->w.addr = mlx_get_data_addr(v->w.img, &v->w.bpp, &v->w.line_l, &v->w.end);
-	v->ray.wall[0].size = v->n.w;
-	v->ray.wall[1].size = v->s.w;
-	v->ray.wall[2].size = v->w.w;
-	v->ray.wall[3].size = v->e.w;
+	check_texture_size(v);
 }

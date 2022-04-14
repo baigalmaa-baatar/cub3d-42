@@ -60,12 +60,11 @@ all		:	${NAME}
 
 clean	:
 			make clean -C ${MLX_DIR}
-			make clean -C ${LIBFT_DIR}
-			${RM} ${OBJS}
+			make fclean -C ${LIBFT_DIR}
+			${RM} ${OBJS} 
 
 fclean	:	clean
 			${RM} ${NAME}
-			make fclean -C ${LIBFT_DIR}
 
 re		:	fclean all
 

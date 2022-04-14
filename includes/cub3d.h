@@ -33,8 +33,8 @@
 # include "error_msgs.h"
 
 # define BUFFER_SIZE 100
-# define W_WIDTH 1280
-# define W_HEIGHT 720
+# define W_WIDTH 1920
+# define W_HEIGHT 1080
 # define MAP_S 64 // map cube size
 # define DOF 1000
 

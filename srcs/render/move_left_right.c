@@ -23,13 +23,13 @@ void	move_right(t_vars *v)
 	b1 = find_b1(v->pdy, v);
 	b2 = find_b2(v->pdy, v);
 	if (!v->pa && check_limit(v, b1, v->check.ipx))
-		v->py += 3;
+		v->py += 6;
 	else if (v->pa == 180 && check_limit(v, b2, v->check.ipx))
-		v->py -= 3;
+		v->py -= 6;
 	else if (v->pa == 90 && check_limit(v, v->check.ipy, a1))
-		v->px += 3;
+		v->px += 6;
 	else if (v->pa == 270 && check_limit(v, v->check.ipy, a2))
-		v->px -= 3;
+		v->px -= 6;
 	else if (v->pa > 0 && v->pa < 90)
 		move_r_090(a1, b1, v);
 	else if (v->pa > 90 && v->pa < 180)
@@ -52,13 +52,13 @@ void	move_left(t_vars *v)
 	b1 = find_b1(v->pdy, v);
 	b2 = find_b2(v->pdy, v);
 	if (!v->pa && check_limit(v, b2, v->check.ipx))
-		v->py -= 3;
+		v->py -= 6;
 	else if (v->pa == 180 && check_limit(v, b1, v->check.ipx))
-		v->py += 3;
+		v->py += 6;
 	else if (v->pa == 90 && check_limit(v, v->check.ipy, a2))
-		v->px -= 3;
+		v->px -= 6;
 	else if (v->pa == 270 && check_limit(v, v->check.ipy, a1))
-		v->px += 3;
+		v->px += 6;
 	else if (v->pa > 0 && v->pa < 90)
 		move_l_090(a2, b2, v);
 	else if (v->pa > 90 && v->pa < 180)

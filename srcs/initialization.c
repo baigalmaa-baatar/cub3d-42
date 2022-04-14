@@ -77,7 +77,9 @@ void	init_vars(t_vars *vars)
 	vars->height2 = vars->height / 2;
 	vars->width = W_WIDTH;
 	vars->rays = vars->width;
-	vars->view = 60.0 / vars->rays;
+	vars->view = 64.0 / vars->rays;
+	if (!((int)vars->view % 2))
+		vars->view = 64.0 / (vars->rays + 1);
 	vars->mlx = NULL;
 	vars->win = NULL;
 	vars->img = NULL;

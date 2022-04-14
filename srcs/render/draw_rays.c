@@ -29,11 +29,11 @@ void	put_pixels(t_vars *v)
 {
 	int	y;
 
-	y = v->ray.line_off + v->ray.line_h - 1;
+	y = v->ray.line_off + v->ray.line_h;
 	while (y < v->height)
 	{
 		my_mlx_pixel_put2(v, v->ray.r, y, v->c_floor);
-		my_mlx_pixel_put2(v, v->ray.r, v->height - y - 1, v->c_ceiling);
+		my_mlx_pixel_put2(v, v->ray.r, v->height - y, v->c_ceiling);
 		y++;
 	}
 }

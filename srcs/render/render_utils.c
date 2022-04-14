@@ -47,7 +47,8 @@ int	check_limit(t_vars *v, float x, float y)
 {
 	if (x <= v->wid_min[(int)y] + 1 || x >= v->wid_max[(int)y]
 		|| y <= 1 || y >= v->len[(int)x]
-		|| !v->map[(int)x][(int)y])
+		|| !v->map[(int)x][(int)y]
+		|| v->map[(int)x][(int)y] == '1')
 		return (0);
 	return (1);
 }
